@@ -80,7 +80,8 @@
 	      return _react2.default.createElement(
 	        'span',
 	        null,
-	        'AppDev (from component)!'
+	        this.props.name,
+	        '!'
 	      );
 	    }
 	  }]);
@@ -100,6 +101,7 @@
 	  _createClass(App, [{
 	    key: 'render',
 	    value: function render() {
+	      var name = 'AppDev group';
 	      return _react2.default.createElement(
 	        'div',
 	        null,
@@ -107,7 +109,7 @@
 	          'p',
 	          null,
 	          ' Hello ',
-	          _react2.default.createElement(Name, null)
+	          _react2.default.createElement(Name, { name: name })
 	        )
 	      );
 	    }
