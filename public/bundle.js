@@ -71,12 +71,7 @@
 	  function App() {
 	    _classCallCheck(this, App);
 	
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(App).call(this));
-	
-	    fetch('index.jsx').then(function (data) {
-	      console.log(data);
-	    });
-	    return _this;
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(App).apply(this, arguments));
 	  }
 	
 	  _createClass(App, [{

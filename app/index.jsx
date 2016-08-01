@@ -1,14 +1,8 @@
 import React from 'react';
-import {render} from 'react-dom';
+import { render } from 'react-dom';
 
 class App extends React.Component {
-  constructor(){
-    super();
-    fetch('index.jsx').then((data)=>{
-      console.log(data);
-    });
-  }
-  render () {
+  render() {
     return (
       <div>
         <p> Hello AppDev!</p>
@@ -17,4 +11,4 @@ class App extends React.Component {
   }
 }
 
-render(<App/>, document.getElementById('app'));
+render(<App />, document.getElementById('app'));
