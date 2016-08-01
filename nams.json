@@ -1,0 +1,25 @@
+[{
+	"id": 1,
+	"building": "Mrak",
+	"room": "38",
+	"vlan": "CHANCELLOR-1-FW",
+	"status": "on"
+}, {
+	"id": 2,
+	"building": "Mrak",
+	"room": "37",
+	"vlan": "CHANCELLOR-1-FW",
+	"status": "off"
+}, {
+	"id": 3,
+	"building": "Mrak",
+	"room": "39",
+	"vlan": "CHANCELLOR-1-FW",
+	"status": "on"
+}, {
+	"id": 4,
+	"building": "Mrak",
+	"room": "38b",
+	"vlan": "CHANCELLOR-1-FW",
+	"status": "on"
+}]
