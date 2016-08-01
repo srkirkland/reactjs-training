@@ -4,7 +4,8 @@ import { render } from 'react-dom';
 import SearchBar from './SearchBar.jsx';
 import SearchResults from './SearchResults.jsx';
 
-const namData = [{ id: 1, building: 'Mrak', room: '38' }, { id: 2, building: 'Mrak', room: '37' }];
+const namData = [{ id: 1, building: 'Mrak', room: '38' },
+{ id: 2, building: 'Wellman', room: '37' }];
 
 class Name extends React.Component {
   render() {
@@ -21,7 +22,7 @@ class App extends React.Component {
       <div>
         <h1> Hello <Name name={name} /></h1>
         <SearchBar />
-        <SearchResults />
+        <SearchResults data={namData} />
       </div>
     );
   }

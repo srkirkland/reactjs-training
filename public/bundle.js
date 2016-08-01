@@ -73,7 +73,7 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var namData = [{ id: 1, building: 'Mrak', room: '38' }, { id: 2, building: 'Mrak', room: '37' }];
+	var namData = [{ id: 1, building: 'Mrak', room: '38' }, { id: 2, building: 'Wellman', room: '37' }];
 	
 	var Name = function (_React$Component) {
 	  _inherits(Name, _React$Component);
@@ -122,7 +122,7 @@
 	          _react2.default.createElement(Name, { name: name })
 	        ),
 	        _react2.default.createElement(_SearchBar2.default, null),
-	        _react2.default.createElement(_SearchResults2.default, null)
+	        _react2.default.createElement(_SearchResults2.default, { data: namData })
 	      );
 	    }
 	  }]);
@@ -22157,7 +22157,26 @@
 	            )
 	          )
 	        ),
-	        _react2.default.createElement("tbody", null)
+	        _react2.default.createElement(
+	          "tbody",
+	          null,
+	          this.props.data.map(function (nam) {
+	            return _react2.default.createElement(
+	              "tr",
+	              null,
+	              _react2.default.createElement(
+	                "td",
+	                null,
+	                nam.building
+	              ),
+	              _react2.default.createElement(
+	                "td",
+	                null,
+	                nam.room
+	              )
+	            );
+	          })
+	        )
 	      );
 	    }
 	  }]);

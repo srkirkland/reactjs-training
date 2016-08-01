@@ -11,6 +11,14 @@ export default class SearchResults extends React.Component {
           </tr>
         </thead>
         <tbody>
+          {this.props.data.map( (nam) => {
+            return (
+              <tr>
+                <td>{nam.building}</td>
+                <td>{nam.room}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     );
