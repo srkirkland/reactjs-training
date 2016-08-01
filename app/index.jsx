@@ -1,11 +1,19 @@
 import React from 'react';
 import { render } from 'react-dom';
 
+class Name extends React.Component {
+  render() {
+    return (
+      <span>AppDev (from component)!</span>
+    );
+  }
+}
+
 class App extends React.Component {
   render() {
     return (
       <div>
-        <p> Hello AppDev!</p>
+        <p> Hello <Name /></p>
       </div>
     );
   }
