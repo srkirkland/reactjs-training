@@ -57,6 +57,14 @@
 	
 	var _reactDom = __webpack_require__(/*! react-dom */ 35);
 	
+	var _SearchBar = __webpack_require__(/*! ./SearchBar.jsx */ 175);
+	
+	var _SearchBar2 = _interopRequireDefault(_SearchBar);
+	
+	var _SearchResults = __webpack_require__(/*! ./SearchResults.jsx */ 176);
+	
+	var _SearchResults2 = _interopRequireDefault(_SearchResults);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -64,6 +72,8 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var namData = [{ id: 1, building: 'Mrak', room: '38' }, { id: 2, building: 'Mrak', room: '37' }];
 	
 	var Name = function (_React$Component) {
 	  _inherits(Name, _React$Component);
@@ -102,15 +112,18 @@
 	    key: 'render',
 	    value: function render() {
 	      var name = 'AppDev group';
+	      var data = [{}];
 	      return _react2.default.createElement(
 	        'div',
 	        null,
 	        _react2.default.createElement(
-	          'p',
+	          'h1',
 	          null,
 	          ' Hello ',
 	          _react2.default.createElement(Name, { name: name })
-	        )
+	        ),
+	        _react2.default.createElement(_SearchBar2.default, null),
+	        _react2.default.createElement(_SearchResults2.default, null)
 	      );
 	    }
 	  }]);
@@ -22019,6 +22032,136 @@
 	var ReactMount = __webpack_require__(/*! ./ReactMount */ 167);
 	
 	module.exports = ReactMount.renderSubtreeIntoContainer;
+
+/***/ },
+/* 175 */
+/*!***************************!*\
+  !*** ./app/SearchBar.jsx ***!
+  \***************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var SearchBar = function (_React$Component) {
+	  _inherits(SearchBar, _React$Component);
+	
+	  function SearchBar() {
+	    _classCallCheck(this, SearchBar);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(SearchBar).apply(this, arguments));
+	  }
+	
+	  _createClass(SearchBar, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        { className: "well well-sm" },
+	        _react2.default.createElement(
+	          "form",
+	          null,
+	          _react2.default.createElement(
+	            "div",
+	            { className: "form-group" },
+	            _react2.default.createElement("input", { type: "text", className: "form-control", placeholder: "Search" })
+	          ),
+	          _react2.default.createElement(
+	            "button",
+	            { type: "submit", className: "btn btn-default" },
+	            "Submit"
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return SearchBar;
+	}(_react2.default.Component);
+	
+	exports.default = SearchBar;
+
+/***/ },
+/* 176 */
+/*!*******************************!*\
+  !*** ./app/SearchResults.jsx ***!
+  \*******************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var SearchResults = function (_React$Component) {
+	  _inherits(SearchResults, _React$Component);
+	
+	  function SearchResults() {
+	    _classCallCheck(this, SearchResults);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(SearchResults).apply(this, arguments));
+	  }
+	
+	  _createClass(SearchResults, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "table",
+	        { className: "table" },
+	        _react2.default.createElement(
+	          "thead",
+	          null,
+	          _react2.default.createElement(
+	            "tr",
+	            null,
+	            _react2.default.createElement(
+	              "th",
+	              null,
+	              "Col1"
+	            )
+	          )
+	        ),
+	        _react2.default.createElement("tbody", null)
+	      );
+	    }
+	  }]);
+	
+	  return SearchResults;
+	}(_react2.default.Component);
+	
+	exports.default = SearchResults;
 
 /***/ }
 /******/ ]);

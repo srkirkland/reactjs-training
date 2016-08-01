@@ -1,6 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
 
+import SearchBar from './SearchBar.jsx';
+import SearchResults from './SearchResults.jsx';
+
+const namData = [{ id: 1, building: 'Mrak', room: '38' }, { id: 2, building: 'Mrak', room: '37' }];
+
 class Name extends React.Component {
   render() {
     return (
@@ -12,9 +17,12 @@ class Name extends React.Component {
 class App extends React.Component {
   render() {
     const name = 'AppDev group';
+    const data = [{ }]
     return (
       <div>
-        <p> Hello <Name name={name} /></p>
+        <h1> Hello <Name name={name} /></h1>
+        <SearchBar />
+        <SearchResults />
       </div>
     );
   }
