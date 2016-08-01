@@ -6,7 +6,8 @@ export default class SearchResults extends React.Component {
       <table className="table">
         <thead>
           <tr>
-            <th>Col1</th>
+            <th>building</th>
+            <th>room</th>
           </tr>
         </thead>
         <tbody>

@@ -112,7 +112,6 @@
 	    key: 'render',
 	    value: function render() {
 	      var name = 'AppDev group';
-	      var data = [{}];
 	      return _react2.default.createElement(
 	        'div',
 	        null,
@@ -22149,7 +22148,12 @@
 	            _react2.default.createElement(
 	              "th",
 	              null,
-	              "Col1"
+	              "building"
+	            ),
+	            _react2.default.createElement(
+	              "th",
+	              null,
+	              "room"
 	            )
 	          )
 	        ),

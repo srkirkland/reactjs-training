@@ -17,7 +17,6 @@ class Name extends React.Component {
 class App extends React.Component {
   render() {
     const name = 'AppDev group';
-    const data = [{ }]
     return (
       <div>
         <h1> Hello <Name name={name} /></h1>
