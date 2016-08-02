@@ -19,24 +19,29 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      namData,
+      namData: [],
+      isLoading: true, // starts out loading
     };
   }
   componentDidMount() {
     setTimeout(() => {
-      const nams = this.state.namData.slice(0, 1);
       this.setState({
-        namData: nams,
+        namData,
+        isLoading: false,
       });
     }, 1000);
   }
   render() {
     const name = 'AppDev group';
+
+    let searchResults = this.state.isLoading ?
+      <span>Loading...</span>
+        : <SearchResults data={this.state.namData} />;
     return (
       <div>
         <h1> Hello <Name name={name} /></h1>
         <SearchBar />
-        <SearchResults data={this.state.namData} />
+        {searchResults}
       </div>
     );
   }

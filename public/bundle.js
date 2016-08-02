@@ -108,8 +108,8 @@
 	    var _this2 = _possibleConstructorReturn(this, Object.getPrototypeOf(App).call(this));
 	
 	    _this2.state = {
-	      namData: namData
-	    };
+	      namData: [],
+	      isLoading: true };
 	    return _this2;
 	  }
 	
@@ -119,9 +119,9 @@
 	      var _this3 = this;
 	
 	      setTimeout(function () {
-	        var nams = _this3.state.namData.slice(0, 1);
 	        _this3.setState({
-	          namData: nams
+	          namData: namData,
+	          isLoading: false
 	        });
 	      }, 1000);
 	    }
@@ -129,6 +129,12 @@
 	    key: 'render',
 	    value: function render() {
 	      var name = 'AppDev group';
+	
+	      var searchResults = this.state.isLoading ? _react2.default.createElement(
+	        'span',
+	        null,
+	        'Loading...'
+	      ) : _react2.default.createElement(_SearchResults2.default, { data: this.state.namData });
 	      return _react2.default.createElement(
 	        'div',
 	        null,
@@ -139,7 +145,7 @@
 	          _react2.default.createElement(Name, { name: name })
 	        ),
 	        _react2.default.createElement(_SearchBar2.default, null),
-	        _react2.default.createElement(_SearchResults2.default, { data: this.state.namData })
+	        searchResults
 	      );
 	    }
 	  }]);
