@@ -118,12 +118,14 @@
 	    value: function componentDidMount() {
 	      var _this3 = this;
 	
-	      setTimeout(function () {
+	      fetch('/api').then(function (r) {
+	        return r.json();
+	      }).then(function (result) {
 	        _this3.setState({
-	          namData: namData,
+	          namData: result,
 	          isLoading: false
 	        });
-	      }, 1000);
+	      });
 	    }
 	  }, {
 	    key: 'render',

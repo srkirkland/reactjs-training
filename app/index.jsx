@@ -24,12 +24,14 @@ class App extends React.Component {
     };
   }
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        namData,
-        isLoading: false,
+    fetch('/api')
+      .then(r => r.json())
+      .then(result => {
+        this.setState({
+          namData: result,
+          isLoading: false,
+        });
       });
-    }, 1000);
   }
   render() {
     const name = 'AppDev group';
