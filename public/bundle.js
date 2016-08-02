@@ -22064,7 +22064,7 @@
   \***************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -22087,30 +22087,52 @@
 	var SearchBar = function (_React$Component) {
 	  _inherits(SearchBar, _React$Component);
 	
-	  function SearchBar() {
+	  function SearchBar(props) {
 	    _classCallCheck(this, SearchBar);
 	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(SearchBar).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(SearchBar).call(this, props));
+	
+	    _this.state = {
+	      query: '' };
+	    return _this;
 	  }
 	
 	  _createClass(SearchBar, [{
-	    key: "render",
+	    key: 'onQueryChange',
+	    value: function onQueryChange(e) {
+	      this.setState({ query: e.target.value });
+	    }
+	  }, {
+	    key: 'onSubmit',
+	    value: function onSubmit(e) {
+	      e.preventDefault(); // it's still javascript!
+	
+	      alert('you asked for ' + this.state.query);
+	    }
+	  }, {
+	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        "div",
-	        { className: "well well-sm" },
+	        'div',
+	        { className: 'well well-sm' },
 	        _react2.default.createElement(
-	          "form",
-	          null,
+	          'form',
+	          { onSubmit: this.onSubmit.bind(this) },
 	          _react2.default.createElement(
-	            "div",
-	            { className: "form-group" },
-	            _react2.default.createElement("input", { type: "text", className: "form-control", placeholder: "Search" })
+	            'div',
+	            { className: 'form-group' },
+	            _react2.default.createElement('input', {
+	              type: 'text',
+	              className: 'form-control',
+	              placeholder: 'Search',
+	              value: this.state.query,
+	              onChange: this.onQueryChange.bind(this)
+	            })
 	          ),
 	          _react2.default.createElement(
-	            "button",
-	            { type: "submit", className: "btn btn-default" },
-	            "Submit"
+	            'button',
+	            { type: 'submit', className: 'btn btn-default' },
+	            'Submit'
 	          )
 	        )
 	      );
