@@ -2,6 +2,9 @@ import React from 'react';
 
 export default class SearchResults extends React.Component {
   render() {
+    if (this.props.data.length === 0) {
+      return <h3>No data</h3>;
+    }
     return (
       <table className="table">
         <thead>

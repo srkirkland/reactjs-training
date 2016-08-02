@@ -20,6 +20,7 @@ class App extends React.Component {
     super();
     this.state = {
       namData: [],
+      allNams: [],
       isLoading: true, // starts out loading
     };
   }
@@ -29,9 +30,18 @@ class App extends React.Component {
       .then(result => {
         this.setState({
           namData: result,
+          allNams: result,
           isLoading: false,
         });
       });
+  }
+  onQuerySubmitted(query) {
+    this.setState({ isLoading: true });
+
+    setTimeout(() => {
+      const filteredData = this.state.allNams.filter(nam => nam.room === String(query));
+      this.setState({ namData: filteredData, isLoading: false });
+    }, 1000);
   }
   render() {
     const name = 'AppDev group';
@@ -42,7 +52,7 @@ class App extends React.Component {
     return (
       <div>
         <h1> Hello <Name name={name} /></h1>
-        <SearchBar />
+        <SearchBar onQuerySubmitted={this.onQuerySubmitted.bind(this)} />
         {searchResults}
       </div>
     );

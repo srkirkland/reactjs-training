@@ -12,8 +12,8 @@ export default class SearchBar extends React.Component {
   }
   onSubmit(e) {
     e.preventDefault(); // it's still javascript!
-
-    alert('you asked for ' + this.state.query);
+    // notify parent to update data
+    this.props.onQuerySubmitted(this.state.query);
   }
   render() {
     return (

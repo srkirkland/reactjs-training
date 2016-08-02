@@ -109,6 +109,7 @@
 	
 	    _this2.state = {
 	      namData: [],
+	      allNams: [],
 	      isLoading: true };
 	    return _this2;
 	  }
@@ -123,9 +124,24 @@
 	      }).then(function (result) {
 	        _this3.setState({
 	          namData: result,
+	          allNams: result,
 	          isLoading: false
 	        });
 	      });
+	    }
+	  }, {
+	    key: 'onQuerySubmitted',
+	    value: function onQuerySubmitted(query) {
+	      var _this4 = this;
+	
+	      this.setState({ isLoading: true });
+	
+	      setTimeout(function () {
+	        var filteredData = _this4.state.allNams.filter(function (nam) {
+	          return nam.room === String(query);
+	        });
+	        _this4.setState({ namData: filteredData, isLoading: false });
+	      }, 1000);
 	    }
 	  }, {
 	    key: 'render',
@@ -146,7 +162,7 @@
 	          ' Hello ',
 	          _react2.default.createElement(Name, { name: name })
 	        ),
-	        _react2.default.createElement(_SearchBar2.default, null),
+	        _react2.default.createElement(_SearchBar2.default, { onQuerySubmitted: this.onQuerySubmitted.bind(this) }),
 	        searchResults
 	      );
 	    }
@@ -22106,8 +22122,8 @@
 	    key: 'onSubmit',
 	    value: function onSubmit(e) {
 	      e.preventDefault(); // it's still javascript!
-	
-	      alert('you asked for ' + this.state.query);
+	      // notify parent to update data
+	      this.props.onQuerySubmitted(this.state.query);
 	    }
 	  }, {
 	    key: 'render',
@@ -22183,6 +22199,13 @@
 	  _createClass(SearchResults, [{
 	    key: "render",
 	    value: function render() {
+	      if (this.props.data.length === 0) {
+	        return _react2.default.createElement(
+	          "h3",
+	          null,
+	          "No data"
+	        );
+	      }
 	      return _react2.default.createElement(
 	        "table",
 	        { className: "table" },
