@@ -16,13 +16,18 @@ class Name extends React.Component {
 }
 
 class App extends React.Component {
+  constructor() {
+    this.state = {
+      namData,
+    };
+  }
   render() {
     const name = 'AppDev group';
     return (
       <div>
         <h1> Hello <Name name={name} /></h1>
         <SearchBar />
-        <SearchResults data={namData} />
+        <SearchResults data={this.state.namData} />
       </div>
     );
   }
