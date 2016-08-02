@@ -13,7 +13,7 @@ export default class SearchResults extends React.Component {
         <tbody>
           {this.props.data.map( (nam) => {
             return (
-              <tr>
+              <tr key={nam.id}>
                 <td>{nam.building}</td>
                 <td>{nam.room}</td>
               </tr>

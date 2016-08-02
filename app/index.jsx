@@ -17,9 +17,18 @@ class Name extends React.Component {
 
 class App extends React.Component {
   constructor() {
+    super();
     this.state = {
       namData,
     };
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      const nams = this.state.namData.slice(0, 1);
+      this.setState({
+        namData: nams,
+      });
+    }, 1000);
   }
   render() {
     const name = 'AppDev group';

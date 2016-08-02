@@ -105,10 +105,27 @@
 	  function App() {
 	    _classCallCheck(this, App);
 	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(App).apply(this, arguments));
+	    var _this2 = _possibleConstructorReturn(this, Object.getPrototypeOf(App).call(this));
+	
+	    _this2.state = {
+	      namData: namData
+	    };
+	    return _this2;
 	  }
 	
 	  _createClass(App, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var _this3 = this;
+	
+	      setTimeout(function () {
+	        var nams = _this3.state.namData.slice(0, 1);
+	        _this3.setState({
+	          namData: nams
+	        });
+	      }, 1000);
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var name = 'AppDev group';
@@ -122,7 +139,7 @@
 	          _react2.default.createElement(Name, { name: name })
 	        ),
 	        _react2.default.createElement(_SearchBar2.default, null),
-	        _react2.default.createElement(_SearchResults2.default, { data: namData })
+	        _react2.default.createElement(_SearchResults2.default, { data: this.state.namData })
 	      );
 	    }
 	  }]);
@@ -22163,7 +22180,7 @@
 	          this.props.data.map(function (nam) {
 	            return _react2.default.createElement(
 	              "tr",
-	              null,
+	              { key: nam.id },
 	              _react2.default.createElement(
 	                "td",
 	                null,
